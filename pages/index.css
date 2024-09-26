@@ -1,6 +1,10 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+
 .page {
   background-color: black;
   color: white;
+  font-family: inter, Arial, sans-serif;
 }
 
 .page__content {
@@ -44,7 +48,9 @@
     "title button"
     "description description";
   grid-gap: 7px 18px;
-  grid-template-columns: minmax(auto, 373px) auto;
+  grid-template-columns: minmax(auto, 375px) auto;
+  /*changed width from figma because the text couldn't be fit in one line*/
+  align-items: center;
 }
 
 .profile__title {
@@ -60,6 +66,7 @@
   width: 24px;
   height: 24px;
   grid-area: button;
+  border: 1px solid white;
 }
 
 .profile__description {
@@ -67,6 +74,7 @@
   font-size: 18px;
   line-height: 22px;
   margin: 0;
+  grid-area: description;
 }
 
 .profile__add-button {
@@ -74,6 +82,7 @@
   width: 150px;
   height: 50px;
   margin: 0 0 0 auto;
+  border: 2px solid white;
 }
 
 .cards {
@@ -109,7 +118,8 @@
   background-color: white;
   color: black;
   margin: 0;
-  padding: 25px 20px;
+  padding: 25px 18px;
+  /*changed padding from figma because the text couldn't be fit in one line*/
 }
 
 .card__title {
@@ -123,4 +133,5 @@
   background: transparent url(../images/Like.svg) no-repeat center;
   width: 21px;
   height: 18px;
+  border: none;
 }
