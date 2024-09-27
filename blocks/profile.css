@@ -35,6 +35,7 @@
   height: 24px;
   grid-area: button;
   border: 1px solid white;
+  cursor: pointer;
 }
 
 .profile__description {
@@ -51,6 +52,7 @@
   height: 50px;
   margin: 0 0 0 auto;
   border: 2px solid white;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
