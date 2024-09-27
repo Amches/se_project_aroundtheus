@@ -60,3 +60,35 @@
 .profile__edit-button:hover {
   opacity: 60%;
 }
+
+@media screen and (max-width: 780px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__description {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile__add-button {
+    margin: 36px auto;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .profile__info {
+    max-width: 282px;
+  }
+
+  .profile__title {
+    font-size: 22px;
+    line-height: 27px;
+    text-align: end;
+  }
+
+  .profile__description {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
