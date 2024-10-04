@@ -20,4 +20,8 @@ The way you'll do this at work is by exporting images directly from Figma — we
 
 Good luck and have fun!
 
+**Features**
+The main features of this project are grid layout and @media querries.
+
+**Video**
 Here is the short video description of the project: https://www.dropbox.com/scl/fo/n8iyzzbedwlzbpxnr5zcf/AOT-PGRwcVluElobkGmnou8?rlkey=laofi5mqrx3oandp2y5u9hgz7&st=77ma0ep7&dl=0
