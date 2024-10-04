@@ -25,3 +25,6 @@ The main features of this project are grid layout and @media querries.
 
 **Video**
 Here is the short video description of the project: https://www.dropbox.com/scl/fo/n8iyzzbedwlzbpxnr5zcf/AOT-PGRwcVluElobkGmnou8?rlkey=laofi5mqrx3oandp2y5u9hgz7&st=77ma0ep7&dl=0
+
+**GitHub Pages**
+Link to the GitHub Pages: https://amches.github.io/se_project_aroundtheus/

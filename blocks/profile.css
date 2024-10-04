@@ -99,7 +99,7 @@
   }
 
   .profile__picture {
-    margin: 0;
+    margin: 0 0 26px;
   }
 
   .profile__edit-button {
