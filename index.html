@@ -109,8 +109,20 @@
         <button class="modal__close"></button>
         <p class="modal__heading">Edit Profile</p>
         <form class="modal__form">
-          <input type="text" name="title" />
-          <input type="text" name="description" />
+          <fieldset class="modal__form-fieldset">
+            <input
+              type="text"
+              name="title"
+              class="modal__form-input"
+              placeholder="Jacques Cousteau"
+            />
+            <input
+              type="text"
+              name="description"
+              class="modal__form-input"
+              placeholder="Explorer"
+            />
+          </fieldset>
           <button class="modal__button">Save</button>
         </form>
       </div>
