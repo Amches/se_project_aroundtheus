@@ -26,3 +26,19 @@ let card6 = {
 let initialCards = [card1, card2, card3, card4, card5, card6];
 
 console.log(initialCards);
+
+let profileEdtBtn = document.querySelector(".profile__edit-button");
+let editModal = document.querySelector(".modal");
+let closeModalBtn = editModal.querySelector(".modal__close");
+
+function openEdit() {
+  editModal.classList.add("modal_opened");
+}
+
+profileEdtBtn.addEventListener("click", openEdit);
+
+function closeEdit() {
+  editModal.classList.remove("modal_opened");
+}
+
+closeModalBtn.addEventListener("click", closeEdit);
