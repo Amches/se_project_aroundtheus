@@ -32,7 +32,7 @@ let profileTitle = document.querySelector(".profile__title");
 let profileDescription = document.querySelector(".profile__description");
 let profileInputTitle = document.querySelector("#js_input_name");
 let profioleInputDescription = document.querySelector("#js_input_description");
-let saveModalBtn = editModal.querySelector(".modal__form");
+let formSaveBtn = editModal.querySelector(".modal__form");
 let cardTemplate =
   document.querySelector("#card__template").content.firstElementChild;
 let cardList = document.querySelector(".cards__list");
@@ -58,8 +58,9 @@ function submitEditForm(e) {
   closeEdit();
 }
 
-saveModalBtn.addEventListener("submit", submitEditForm);
+formSaveBtn.addEventListener("submit", submitEditForm);
 
+// I did not understand what is wrong here. Please rephrase the comment
 function getCardElement(data) {
   for (let i = 0; i < data.length; i++) {
     let cardElement = cardTemplate.cloneNode(true);
@@ -68,7 +69,6 @@ function getCardElement(data) {
     cardImageELement.src = data[i].link;
     cardTitleElement.textContent = data[i].name;
     cardImageELement.alt = data[i].name;
-    console.log(cardElement);
     cardList.append(cardElement);
   }
 }

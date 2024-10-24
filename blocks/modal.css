@@ -90,4 +90,16 @@
   .modal__container {
     max-width: 282px;
   }
+  .modal__close {
+    width: 26px;
+    height: 26px;
+    bottom: calc(100% + 14px);
+    left: calc(100% - 26px);
+  }
+  .modal__button {
+    font-size: 14px;
+  }
+  .modal__heading {
+    font-size: 18px;
+  }
 }
