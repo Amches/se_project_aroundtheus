@@ -32,7 +32,7 @@ let profileTitle = document.querySelector(".profile__title");
 let profileDescription = document.querySelector(".profile__description");
 let profileInputTitle = document.querySelector("#js_input_name");
 let profioleInputDescription = document.querySelector("#js_input_description");
-let formSaveBtn = editModal.querySelector(".modal__form");
+let profileForm = editModal.querySelector(".modal__form");
 let cardTemplate =
   document.querySelector("#card__template").content.firstElementChild;
 let cardList = document.querySelector(".cards__list");
@@ -58,18 +58,19 @@ function submitEditForm(e) {
   closeEdit();
 }
 
-formSaveBtn.addEventListener("submit", submitEditForm);
+profileForm.addEventListener("submit", submitEditForm);
 
-// I did not understand what is wrong here. Please rephrase the comment
 function getCardElement(data) {
-  for (let i = 0; i < data.length; i++) {
-    let cardElement = cardTemplate.cloneNode(true);
-    let cardImageELement = cardElement.querySelector(".card__image");
-    let cardTitleElement = cardElement.querySelector(".card__title");
-    cardImageELement.src = data[i].link;
-    cardTitleElement.textContent = data[i].name;
-    cardImageELement.alt = data[i].name;
-    cardList.append(cardElement);
-  }
+  let cardElement = cardTemplate.cloneNode(true);
+  let cardImageELement = cardElement.querySelector(".card__image");
+  let cardTitleElement = cardElement.querySelector(".card__title");
+  cardImageELement.src = data.link;
+  cardTitleElement.textContent = data.name;
+  cardImageELement.alt = data.name;
+  return cardElement;
 }
-getCardElement(initialCards);
+
+initialCards.forEach((data) => {
+  let cardElement = getCardElement(data);
+  cardList.append(cardElement);
+});
