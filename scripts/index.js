@@ -73,16 +73,32 @@ function getCardElement(data) {
   let cardElement = cardTemplate.cloneNode(true);
   let cardImageELement = cardElement.querySelector(".card__image");
   let cardTitleElement = cardElement.querySelector(".card__title");
+  const likeButton = cardElement.querySelector(".card__like-button");
+  const deleteButton = cardElement.querySelector(".card__trash-button");
+
   cardImageELement.src = data.link;
   cardTitleElement.textContent = data.name;
   cardImageELement.alt = data.name;
+
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
   return cardElement;
 }
+//original cards
+initialCards.forEach((data) => addUsersCard(data, cardList));
 
-initialCards.forEach((data) => {
+//user's cards
+//cahnged the order of original cards, because the new ones should be in the beginning
+function addUsersCard(data, list) {
   let cardElement = getCardElement(data);
-  cardList.append(cardElement);
-});
+  list.prepend(cardElement);
+}
 
 addCardButton.addEventListener("click", openAddCard);
 
@@ -98,6 +114,9 @@ function closeAddCard() {
 
 function handleAddCardForm(e) {
   e.preventDefault();
+  const name = addCardInputTitle.value;
+  const link = addCardInputLink.value;
+  addUsersCard({ name, link }, cardList);
   closeAddCard();
 }
 
