@@ -1,4 +1,4 @@
-let initialCards = [
+const initialCards = [
   {
     name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
@@ -49,14 +49,13 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalImage = previewModal.querySelector(".modal__image");
 const closePreviewModalButton = previewModal.querySelector(".modal__close");
 const previewModalCaption = previewModal.querySelector(".modal__caption");
+const closeButtons = document.querySelectorAll(".modal__close");
 
 profileEdtBtn.addEventListener("click", () => {
   profileInputName.value = profileTitle.textContent;
   profioleInputDescription.value = profileDescription.textContent;
   openModal(editModal);
 });
-
-closeEditModalBtn.addEventListener("click", () => closeModal(editModal));
 
 function handleSubmitEditForm(e) {
   e.preventDefault();
@@ -93,10 +92,6 @@ function getCardElement(data) {
     previewModalCaption.textContent = data.name;
   });
 
-  closePreviewModalButton.addEventListener("click", () => {
-    closeModal(previewModal);
-  });
-
   return cardElement;
 }
 //original cards
@@ -105,13 +100,11 @@ initialCards.forEach((data) => addUsersCard(data, cardList));
 //user's cards
 //cahnged the order of original cards, because the new ones should be in the beginning
 function addUsersCard(data, list) {
-  let cardElement = getCardElement(data);
+  const cardElement = getCardElement(data);
   list.prepend(cardElement);
 }
 
 addCardButton.addEventListener("click", () => openModal(addCardModal));
-
-closeAddCardModalBtn.addEventListener("click", () => closeModal(addCardModal));
 
 function handleAddCardForm(e) {
   e.preventDefault();
@@ -119,6 +112,7 @@ function handleAddCardForm(e) {
   const link = addCardInputLink.value;
   addUsersCard({ name, link }, cardList);
   closeModal(addCardModal);
+  e.target.reset();
 }
 
 addCardForm.addEventListener("submit", handleAddCardForm);
@@ -130,3 +124,8 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
+
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
+});
