@@ -47,7 +47,7 @@
   line-height: 29px;
   text-align: left;
   color: black;
-  margin: 0 0 54px;
+  margin: 0 0 24px;
 }
 
 .modal__form {
@@ -70,7 +70,7 @@
   font-weight: 400;
   line-height: 17px;
   text-align: left;
-  margin-bottom: 30px;
+  margin-top: 30px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -88,6 +88,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
+  margin-top: 48px;
 }
 
 .modal__container_preview {
@@ -136,4 +137,18 @@
     font-size: 18px;
     margin-bottom: 75px;
   }
+}
+
+.input__error {
+  font-size: 12px;
+  line-height: 15px;
+  color: red;
+}
+
+.modal__form-input_type_error {
+  border-color: red;
+}
+
+.modal__button_disabled {
+  opacity: 20%;
 }

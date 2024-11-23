@@ -64,14 +64,28 @@
               class="modal__form-input"
               id="js_input_name"
               placeholder="Name"
+              required
+              minlength="2"
+              maxlength="40"
             />
+            <span
+              class="input__error modal__form-input_type_error"
+              id="js_input_name-error"
+            ></span>
             <input
               type="text"
               name="description"
               class="modal__form-input"
               id="js_input_description"
               placeholder="Description"
+              required
+              minlength="2"
+              maxlength="40"
             />
+            <span
+              class="input__error modal__form-input_type_error"
+              id="js_input_description-error"
+            ></span>
           </fieldset>
           <button class="modal__button">Save</button>
         </form>
@@ -90,14 +104,28 @@
               class="modal__form-input"
               id="js_input_title"
               placeholder="Title"
+              required
+              minlength="1"
+              maxlength="30"
             />
+            <span
+              class="input__error modal__form-input_type_error"
+              id="js_input_title-error"
+            ></span>
             <input
               type="text"
               name="url"
               class="modal__form-input"
               id="js_input_link"
               placeholder="Image link"
+              required
+              minlength="2"
+              maxlength="200"
             />
+            <span
+              class="input__error modal__form-input_type_error"
+              id="js_input_link-error"
+            ></span>
           </fieldset>
           <button class="modal__button">Create</button>
         </form>
@@ -114,5 +142,6 @@
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
