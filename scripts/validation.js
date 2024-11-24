@@ -63,8 +63,8 @@ const params = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__form-input_type_error",
-  errorClass: "input__error",
+  inputErrorClass: "modal__form-fieldset-input_type_error",
+  errorClass: "modal__input__error",
 };
 
 enableValidation(params);
