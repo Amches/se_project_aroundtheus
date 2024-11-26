@@ -39,9 +39,11 @@ function toggleButtonState(inputElements, submitButton, params) {
 function setEventListeners(formElement, params) {
   const inputElements = [...formElement.querySelectorAll(params.inputSelector)];
   const submitButton = formElement.querySelector(params.submitButtonSelector);
-  toggleButtonState(inputElements, submitButton, params);
+  toggleButtonState(inputElements, submitButton, params); //please explain why this doesn't enable
+  //submit button on edit profile before making any changes, as it was disabling the button in tasks
+  //during the theory part of the sprint, and like it disables this button for add card function, thanks
   inputElements.forEach((inputElement) => {
-    inputElement.addEventListener("input", (evt) => {
+    inputElement.addEventListener("input", () => {
       checkInputValidity(formElement, inputElement, params);
       toggleButtonState(inputElements, submitButton, params);
     });
@@ -63,8 +65,8 @@ const params = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__form-fieldset-input_type_error",
-  errorClass: "modal__input__error",
+  inputErrorClass: "modal__type_error",
+  errorClass: "modal__error",
 };
 
 enableValidation(params);
