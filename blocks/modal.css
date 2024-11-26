@@ -142,14 +142,14 @@
   }
 }
 
-.modal__form-fieldset--error {
+.modal__form-error {
   position: absolute;
   font-size: 12px;
   line-height: 15px;
   color: red;
 }
 
-.modal__form-fieldset--type-error {
+.modal__form-error_active {
   border-color: red;
 }
 
