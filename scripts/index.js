@@ -59,7 +59,10 @@ profileEdtBtn.addEventListener("click", () => {
 
 function handleSubmitEditForm(evt) {
   evt.preventDefault();
-  profileTitle.textContent = profileInputName.value;
+  const oldProfileInputName = profileInputName.value;
+  const newProfileInputName = profileTitle.textContent;
+  console.log("asdasdasdasd");
+  // profileTitle.textContent = profileInputName.value;
   profileDescription.textContent = profioleInputDescription.value;
   closeModal(editModal);
 }

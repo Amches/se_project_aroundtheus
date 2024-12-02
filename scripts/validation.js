@@ -21,10 +21,12 @@ function checkInputValidity(formElement, inputElement, params) {
 }
 
 function toggleButtonState(inputElements, submitButton, params) {
-  let foundInvalid = false;
+  let foundInvalid;
   inputElements.forEach((inputElement) => {
     if (!inputElement.validity.valid) {
       foundInvalid = true;
+    } else {
+      foundInvalid = false;
     }
   });
   if (foundInvalid) {
