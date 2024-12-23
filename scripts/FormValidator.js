@@ -1,5 +1,5 @@
 class FormValidator {
-  cunstructor(settings, formElement) {
+  constructor(settings, formElement) {
     this._inputSelector = settings.inputSelector;
     this._submitButtonSelector = settings.submitButtonSelector;
     this._inactiveButtonClass = settings.inactiveButtonClass;
@@ -7,11 +7,9 @@ class FormValidator {
     this._errorClass = settings.errorClass;
     this._form = formElement;
     this._inputElements = [
-      ...this._form.querySelectorAll(params.inputSelector),
+      ...this._form.querySelectorAll(settings.inputSelector),
     ];
-    this._submitButton = this._form.querySelector(
-      this._settings.submitButtonSelector
-    );
+    this._submitButton = this._form.querySelector(this._submitButtonSelector);
   }
 
   _showInputError(inputElement) {

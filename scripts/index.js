@@ -1,5 +1,9 @@
 import FormValidator from "./FormValidator.js";
+<<<<<<< HEAD
 import Card from "./Card.js";
+=======
+import Card from "./card.js";
+>>>>>>> 602771fe10a5b9f837d5cc9e5d4f4ededf6173d0
 
 const initialCards = [
   {
