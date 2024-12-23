@@ -1,9 +1,5 @@
 import FormValidator from "./FormValidator.js";
-<<<<<<< HEAD
-import Card from "./Card.js";
-=======
 import Card from "./card.js";
->>>>>>> 602771fe10a5b9f837d5cc9e5d4f4ededf6173d0
 
 const initialCards = [
   {
@@ -34,11 +30,11 @@ const initialCards = [
 
 const settings = {
   formSelector: ".modal__form",
-  inputSelector: ".modal__input",
+  inputSelector: ".modal__form-inputt",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
+  inputErrorClass: "modal__form-error_active",
+  errorClass: "modal__form-error",
 };
 
 const cardData = {
@@ -48,10 +44,10 @@ const cardData = {
 
 const formValidators = {};
 
-const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formSelector));
+const enableValidation = (settings) => {
+  const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
-    const validator = new FormValidator(config, formElement);
+    const validator = new FormValidator(settings, formElement);
     const formName = formElement.getAttribute("name");
 
     formValidators[formName] = validator;

@@ -65,7 +65,6 @@ class FormValidator {
     });
 
     this._setEventListeners();
-    this._toggleButtonState();
   }
 
   disableSubmitButton() {

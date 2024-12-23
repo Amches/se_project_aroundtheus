@@ -1,17 +1,10 @@
 class Card {
-  constructor(data, cardSelector, handleCardImageClick) {
+  constructor(data, cardSelector) {
     this._name = data.name;
     this._link - data.link;
     this._cardSelector = cardSelector;
-    this._handleCardImageClick = handleCardImageClick;
   }
   _setEventListeners() {
-    this._cardElement
-      .querySelector(".card__image")
-      .addEventListener("click", () => {
-        this._handleImageClick(this._name, this._link);
-      });
-
     this._cardElement
       .querySelector(".card__like-button")
       .addEventListener("click", () => {
