@@ -1,5 +1,5 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./card.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
 
 const initialCards = [
   {
@@ -59,7 +59,7 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalImage = previewModal.querySelector(".modal__image");
 const previewModalCaption = previewModal.querySelector(".modal__caption");
 const closeButtons = document.querySelectorAll(".modal__close");
-const cardSelector = "#card-template";
+const cardSelector = "#card__template";
 
 profileEdtBtn.addEventListener("click", () => {
   profileInputName.value = profileTitle.textContent;
@@ -132,11 +132,11 @@ function handleCardImageClick(name, link) {
 
 function renderCard(data) {
   const cardElement = createCard(data);
-  cardsList.prepend(cardElement);
+  cardList.prepend(cardElement);
 }
 
 function createCard(data) {
-  const card = new Card(data, "#card-template", handleCardImageClick);
+  const card = new Card(data, "#card__template", handleCardImageClick);
   const cardElement = card.getCardElement();
   return cardElement;
 }

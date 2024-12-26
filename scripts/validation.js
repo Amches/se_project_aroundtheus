@@ -1,3 +1,5 @@
+//leaving validation.js untill all mistakes are corrected in final submission
+
 // function showInputError(formElement, inputElement, params) {
 //   const errorMessage = formElement.querySelector(`#${inputElement.id}-error`);
 //   inputElement.classList.add(params.inputErrorClass);
