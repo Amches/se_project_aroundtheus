@@ -30,7 +30,7 @@ const initialCards = [
 
 const settings = {
   formSelector: ".modal__form",
-  inputSelector: ".modal__form-inputt",
+  inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__form-error_active",
