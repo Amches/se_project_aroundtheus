@@ -193,8 +193,10 @@ profileEdtBtn.addEventListener("click", () => {
   const currentUserData = userData.getUserInfo();
   profileInputName.value = currentUserData.name;
   profioleInputDescription.value = currentUserData.description;
-  editFormValidator.resetValidation();
   editProfilePopup.open();
 });
 
-addCardButton.addEventListener("click", () => addCardPopup.open());
+addCardButton.addEventListener("click", () => {
+  addCardPopup.open();
+  addCardFormValidator.resetValidation();
+});
