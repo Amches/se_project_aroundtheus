@@ -1,0 +1,118 @@
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile__picture {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 30px 0 0;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "description description";
+  grid-gap: 7px 18px;
+  grid-template-columns: minmax(auto, 375px) auto;
+  /*changed width from figma because the text couldn't be fit in one line*/
+  align-items: center;
+}
+
+.profile__title {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  grid-area: title;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 375px;
+}
+
+.profile__edit-button {
+  background: transparent url(../images/edit_button.svg) no-repeat center;
+  width: 24px;
+  height: 24px;
+  grid-area: button;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.profile__description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0;
+  grid-area: description;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.profile__add-button {
+  background: transparent url(../images/add_button.svg) no-repeat center;
+  width: 150px;
+  height: 50px;
+  margin: 0 0 0 auto;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.profile__add-button:hover {
+  opacity: 60%;
+}
+
+.profile__edit-button:hover {
+  opacity: 60%;
+}
+
+@media screen and (max-width: 780px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__description {
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 36px auto;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .profile__info {
+    max-width: 282px;
+  }
+
+  .profile__title {
+    font-size: 22px;
+    line-height: 27px;
+    text-align: end;
+  }
+
+  .profile__description {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .profile__picture {
+    margin: 0 0 26px;
+  }
+
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+  }
+
+  .profile__add-button {
+    width: 282px;
+    margin: 36px 19px 0;
+    padding: 0;
+  }
+}
