@@ -28,6 +28,7 @@
             class="profile__picture"
             src="<%=require('./images/jacques-cousteau.png')%>"
           />
+          <button class="profile__picture-edit"></button>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button class="profile__edit-button" type="button"></button>
@@ -95,6 +96,29 @@
       </div>
     </div>
 
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <h2 class="modal__heading">Edit profile picture</h2>
+        <form class="modal__form">
+          <fieldset class="modal__form-fieldset">
+            <input
+              type="url"
+              name="profile picture"
+              id="js_input_avatar"
+              placeholder="Picture Link"
+              required
+            />
+            <span
+              class="modal__form-error modal__form-error_active"
+              id="js_input_avatar-error"
+            ></span>
+          </fieldset>
+          <button class="modal__button modal__button_disabled">Save</button>
+        </form>
+      </div>
+    </div>
+
     <div class="modal" id="add-card-modal">
       <div class="modal__container">
         <button class="modal__close"></button>
@@ -142,6 +166,16 @@
           <img class="modal__image" src="" alt="" />
           <p class="modal__caption"></p>
         </div>
+      </div>
+    </div>
+
+    <div class="modal" id="delete-card-modal">
+      <div class="modal__container">
+        <button class="modal__close"></button>
+        <h2 class="modal__heading">This post will be deleted. Are you sure?</h2>
+        <form class="modal__form">
+          <button class="modal__button">Yes.</button>
+        </form>
       </div>
     </div>
   </body>
