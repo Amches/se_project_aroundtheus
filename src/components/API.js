@@ -35,13 +35,13 @@ export default class Api {
     }).then(this._handleServerResponse);
   }
 
-  setProfileInfo({ name, description }) {
+  setProfileInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        name: name,
-        description: description,
+        name: data.title,
+        description: data.description,
       }),
     }).then(this._handleServerResponse);
   }
@@ -50,11 +50,18 @@ export default class Api {
     return Promise.all([this.getUserInfo(), this.getInitialCards()]);
   }
 
-  changeCardLikeStatus(cardId, isLiked) {
+  addCardLike(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-      method: isLiked ? "DELETE" : "PUT",
+      method: "PUT",
       headers: this._headers,
-    }).then((res) => this._handleServerResponse(res));
+    }).then(this._checkRes);
+  }
+
+  deleteCardLike(cardId) {
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+      method: "DELETE",
+      headers: this._headers,
+    }).then(this._checkRes);
   }
 
   setAvatar(link) {
@@ -74,11 +81,3 @@ export default class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 }
-
-const api = new Api({
-  baseUrl: "https://around-api.en.tripleten-services.com/v1",
-  headers: {
-    authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
-    "Content-Type": "application/json",
-  },
-});
