@@ -18,13 +18,13 @@ class Card {
   }
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => {
-      this._handleLikeButton();
+      this._handleLikeClick(this, this._likeStatus, this._id);
     });
 
     this._cardElement
       .querySelector(".card__trash-button")
       .addEventListener("click", () => {
-        this._handleDeleteButton();
+        this._handleDeleteButton(this._id, this._cardElement);
       });
 
     this._cardImageEl.addEventListener("click", () => {
@@ -68,11 +68,6 @@ class Card {
 
   setLikes(isLiked) {
     this._isLiked = isLiked;
-    this._updateLikes();
-  }
-
-  toggleLike() {
-    this._isLiked = !this._isLiked;
     this._updateLikes();
   }
 }
