@@ -111,13 +111,13 @@ function createCard(data) {
       link: data.link,
       _id: data._id,
       isLiked: data.isLiked,
-      likes: data.likes,
     },
     "#card__template",
     handleDeleteButton,
     handleLikeClick,
     handleCardImageClick
   );
+  console.log(cardElement);
   return cardElement.getCardElement();
 }
 
@@ -127,11 +127,11 @@ function renderCard(data) {
 }
 
 avatarEdtBtn.addEventListener("click", () => {
-  avatarEditModal.open();
+  avatarEditPopup.open();
 });
 
-function handleLikeClick(card, likeStatus, cardId) {
-  if (!likeStatus) {
+function handleLikeClick(card, isLiked, cardId) {
+  if (!isLiked) {
     api
       .addCardLike(cardId)
       .then((res) => {
@@ -175,7 +175,7 @@ function handleAddCardFormSubmit(data) {
   api
     .createNewCard(data)
     .then((card) => {
-      renderCard(card);
+      renderCard(card, cardList);
     })
     .then(() => {
       addCardFormValidator.disableSubmitButton();

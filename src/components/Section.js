@@ -6,10 +6,10 @@ export default class Section {
   }
   renderItems() {
     this._renderedCards.forEach((item) => {
-      this._renderer(item);
+      this._renderer(item, this._container);
     });
   }
-  addItem(element, method = "append") {
-    this._container[method](element);
+  addItem(item) {
+    this._container.append(item);
   }
 }
