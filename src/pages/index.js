@@ -24,11 +24,10 @@ import {
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "a2157b2f-5811-464d-9fc1-089500b229d2",
+    authorization: "a05557a7-2951-4010-9ddf-1cfa57b9c4e2",
     "Content-Type": "application/json",
   },
 });
-
 let cardSection;
 
 api
@@ -36,7 +35,7 @@ api
   .then(([APIUserInfo, APICards]) => {
     userData.setProfileInfo({
       title: APIUserInfo.name,
-      description: APIUserInfo.description,
+      description: APIUserInfo.about,
       avatar: APIUserInfo.avatar,
     });
     cardSection = new Section(
@@ -49,7 +48,7 @@ api
     cardSection.renderItems();
   })
   .catch((err) => {
-    console.log(err);
+    console.error(err);
   });
 
 const userData = new UserInfo(
@@ -159,14 +158,8 @@ function handleEditFormSubmit(data) {
     .setProfileInfo(data)
     .then(() => {
       userData.setUserInfo(data);
-    })
-    .then(() => {
       editFormValidator.disableSubmitButton();
-    })
-    .then(() => {
       editProfilePopup.clearInputs();
-    })
-    .then(() => {
       editProfilePopup.close();
     })
     .catch((err) => {
@@ -186,11 +179,7 @@ function handleAddCardFormSubmit(data) {
     })
     .then(() => {
       addCardFormValidator.disableSubmitButton();
-    })
-    .then(() => {
       addCardPopup.clearInputs();
-    })
-    .then(() => {
       addCardPopup.close();
     })
     .catch((err) => {
@@ -210,8 +199,6 @@ function handleAvatarEditFormSubmit(data) {
     })
     .then(() => {
       editAvatarFormValidator.disableSubmitButton();
-    })
-    .then(() => {
       avatarEditPopup.close();
     })
     .catch((err) => {

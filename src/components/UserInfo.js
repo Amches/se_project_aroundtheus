@@ -16,7 +16,7 @@ export default class UserInfo {
     this._descriptionElement.textContent = description;
   }
 
-  setUserAvatar(avatar) {
+  setUserAvatar({ avatar }) {
     this._avatar.src = avatar;
   }
 
