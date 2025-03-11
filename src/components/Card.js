@@ -2,9 +2,9 @@ class Card {
   constructor(
     data,
     cardSelector,
-    handleCardImageClick,
     handleDeleteButton,
-    handleLikeClick
+    handleLikeClick,
+    handleCardImageClick
   ) {
     this._name = data.name;
     this._link = data.link;
@@ -44,6 +44,7 @@ class Card {
     this._likeButton = this._cardElement.querySelector(".card__like-button");
     this.setLikes(this._isLiked);
     this._setEventListeners();
+    console.log(this._cardElement);
     return this._cardElement;
   }
 

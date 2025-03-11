@@ -117,7 +117,6 @@ function createCard(data) {
     handleLikeClick,
     handleCardImageClick
   );
-  console.log(cardElement);
   return cardElement.getCardElement();
 }
 
@@ -220,8 +219,6 @@ function handleDeleteButton(cardId, card) {
       .deleteCard(cardId)
       .then(() => {
         card.remove();
-      })
-      .then(() => {
         deleteCardPopup.close();
       })
       .catch((err) => {

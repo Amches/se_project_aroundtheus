@@ -40,8 +40,8 @@ export default class Api {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        name: data.title,
-        description: data.description,
+        name: data.name,
+        about: data.description,
       }),
     }).then(this._handleServerResponse);
   }
