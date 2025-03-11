@@ -33,8 +33,9 @@ let cardSection;
 api
   .getAppInfo()
   .then(([APIUserInfo, APICards]) => {
+    console.log(APIUserInfo.avatar);
     userData.setProfileInfo({
-      title: APIUserInfo.name,
+      name: APIUserInfo.name,
       description: APIUserInfo.about,
       avatar: APIUserInfo.avatar,
     });

@@ -23,12 +23,20 @@
       </header>
       <main class="content page__wrapping">
         <section class="profile">
-          <img
-            alt="Jacques Cousteau"
-            class="profile__picture"
-            src="<%=require('./images/jacques-cousteau.png')%>"
-          />
-          <button class="profile__picture-edit"></button>
+          <div class="profile__picture-container">
+            <img
+              alt="Jacques Cousteau"
+              class="profile__picture"
+              src="<%=require('./images/jacques-cousteau.png')%>"
+            />
+            <button class="profile__picture-edit">
+              <img
+                src="<%=require('./images/edit_avatar_btn.svg')%>"
+                alt="edit picture button"
+                class="profile__picture-edit-button"
+              />
+            </button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button class="profile__edit-button" type="button"></button>
@@ -104,7 +112,8 @@
           <fieldset class="modal__form-fieldset">
             <input
               type="url"
-              name="profile picture"
+              class="modal__form-input"
+              name="link"
               id="js_input_avatar"
               placeholder="Picture Link"
               required

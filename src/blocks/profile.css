@@ -3,11 +3,40 @@
   align-items: center;
 }
 
+.profile__picture-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 24px 0 0;
+}
+
 .profile__picture {
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  margin: 0 30px 0 0;
+  margin: 0;
+}
+
+.profile__picture-edit-button {
+  max-height: 26px;
+  max-width: 26px;
+}
+
+.profile__picture-edit {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  background-size: contain;
+  border: none;
+  border-radius: 50%;
+  padding: 50px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+}
+
+.profile__picture-edit:hover {
+  visibility: visible;
+  opacity: 1;
 }
 
 .profile__info {
