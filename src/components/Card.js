@@ -44,7 +44,6 @@ class Card {
     this._likeButton = this._cardElement.querySelector(".card__like-button");
     this.setLikes(this._isLiked);
     this._setEventListeners();
-    console.log(this._cardElement);
     return this._cardElement;
   }
 
@@ -58,11 +57,6 @@ class Card {
 
   getId() {
     return this._cardId;
-  }
-
-  deleteCard() {
-    this._cardElement.remove();
-    this._cardElement = null;
   }
 
   setLikes(isLiked) {
