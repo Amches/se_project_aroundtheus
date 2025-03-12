@@ -38,10 +38,16 @@ export const profileEdtBtn = document.querySelector(".profile__edit-button");
 const editModal = document.querySelector("#edit-modal");
 export const profileForm = editModal.querySelector(".modal__form");
 export const profileInputName = document.querySelector("#js_input_name");
-export const profioleInputDescription = document.querySelector(
+export const profileInputDescription = document.querySelector(
   "#js_input_description"
 );
 
 export const addCardButton = document.querySelector(".profile__add-button");
 const addCardModal = document.querySelector("#add-card-modal");
 export const addCardForm = addCardModal.querySelector(".modal__form");
+
+export const avatarEdtBtn = document.querySelector(".profile__picture-edit");
+const avatarEditModal = document.querySelector("#avatar-modal");
+export const avatarEditForm = avatarEditModal.querySelector(".modal__form");
+
+export const cardList = document.querySelector(".cards__list");
