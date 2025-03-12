@@ -32,16 +32,16 @@ let cardSection;
 
 api
   .getAppInfo()
-  .then(([APIUserInfo, APICards]) => {
-    console.log(APIUserInfo.avatar);
+  .then(([apiUserInfo, apiCards]) => {
+    console.log(apiUserInfo.avatar);
     userData.setProfileInfo({
-      name: APIUserInfo.name,
-      description: APIUserInfo.about,
-      avatar: APIUserInfo.avatar,
+      name: apiUserInfo.name,
+      description: apiUserInfo.about,
+      avatar: apiUserInfo.avatar,
     });
     cardSection = new Section(
       {
-        items: APICards,
+        items: apiCards,
         renderer: renderCard,
       },
       ".cards__list"
